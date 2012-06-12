@@ -1,5 +1,6 @@
 package com.test.restserver;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -48,10 +49,16 @@ public class REST implements MessageBodyWriterInterceptor
 	@Path("/test")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes({ "*" })
-	public RESTObject printMessage()
+	public RESTObject<RESTChildObject> printMessage()
 	{
-		final RESTObject retValue = new RESTObject();
-		retValue.setValue(1);
+		final RESTObject<RESTChildObject> retValue = new RESTObject<RESTChildObject>();
+		retValue.setObjects(new ArrayList<RESTChildObject>());
+		
+		final RESTChildObject child = new RESTChildObject();
+		child.setId(1);
+		
+		retValue.getObjects().add(child);
+		
 		return retValue;
 
 	}

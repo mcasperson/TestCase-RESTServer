@@ -1,16 +1,19 @@
 package com.test.restserver;
 
-public class RESTObject
+import java.util.List;
+
+public class RESTObject<T>
 {
-	private Integer value;
+	private List<T> objects;
 
-	public Integer getValue()
+	public List<T> getObjects()
 	{
-		return value;
+		return objects;
 	}
 
-	public void setValue(Integer value)
+	public void setObjects(List<T> objects)
 	{
-		this.value = value;
+		this.objects = objects;
 	}
+	
 }
