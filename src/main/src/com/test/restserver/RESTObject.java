@@ -1,3 +1,4 @@
+package com.test.restserver;
 
 public class RESTObject
 {
