@@ -10,6 +10,11 @@
 		<param-name>resteasy.scan</param-name>
 		<param-value>true</param-value>
 	</context-param>
+	
+	<!-- <context-param>
+		<param-name>resteasy.providers</param-name>
+		<param-value>com.test.restserver.REST</param-value>
+	</context-param>-->
  
 	<!-- this need same with resteasy servlet url-pattern -->
 	<context-param>
