@@ -1,17 +1,15 @@
 package com.test.restserver;
 
-import java.util.List;
-
 public class RESTChildObject<T>
 {
-	private List<T> someList;
+	private ListWrapper<T> someList;
 
-	public List<T> getSomeList()
+	public ListWrapper<T> getSomeList()
 	{
 		return someList;
 	}
 
-	public void setSomeList(List<T> someList)
+	public void setSomeList(ListWrapper<T> someList)
 	{
 		this.someList = someList;
 	}

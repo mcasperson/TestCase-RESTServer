@@ -52,17 +52,19 @@ public class REST implements MessageBodyWriterInterceptor
 	public RESTObject<RESTChildObject<RESTGrandchildObject>> printMessage()
 	{
 		final RESTObject<RESTChildObject<RESTGrandchildObject>> retValue = new RESTObject<RESTChildObject<RESTGrandchildObject>>();
-		retValue.setObjects(new ArrayList<RESTChildObject<RESTGrandchildObject>>());
+		retValue.setObjects(new ListWrapper<RESTChildObject<RESTGrandchildObject>>());
+		retValue.getObjects().setList(new ArrayList<RESTChildObject<RESTGrandchildObject>>());
 		
 		final RESTChildObject<RESTGrandchildObject> child = new RESTChildObject<RESTGrandchildObject>();
-		child.setSomeList(new ArrayList<RESTGrandchildObject>());
+		child.setSomeList(new ListWrapper<RESTGrandchildObject>());
+		child.getSomeList().setList(new ArrayList<RESTGrandchildObject>());
 		
-		retValue.getObjects().add(child);
+		retValue.getObjects().getList().add(child);
 		
 		final RESTGrandchildObject grandchild = new RESTGrandchildObject();
 		grandchild.setName("Grandchild");
 		
-		child.getSomeList().add(grandchild);
+		child.getSomeList().getList().add(grandchild);
 				
 		return retValue;
 
