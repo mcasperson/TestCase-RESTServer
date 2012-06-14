@@ -1,16 +1,19 @@
 package com.test.restserver;
 
-public class RESTChildObject
+import java.util.List;
+
+public class RESTChildObject<T>
 {
-	private Integer id;
+	private List<T> someList;
 
-	public Integer getId()
+	public List<T> getSomeList()
 	{
-		return id;
+		return someList;
 	}
 
-	public void setId(Integer id)
+	public void setSomeList(List<T> someList)
 	{
-		this.id = id;
+		this.someList = someList;
 	}
+
 }

@@ -49,16 +49,21 @@ public class REST implements MessageBodyWriterInterceptor
 	@Path("/test")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes({ "*" })
-	public RESTObject<RESTChildObject> printMessage()
+	public RESTObject<RESTChildObject<RESTGrandchildObject>> printMessage()
 	{
-		final RESTObject<RESTChildObject> retValue = new RESTObject<RESTChildObject>();
-		retValue.setObjects(new ArrayList<RESTChildObject>());
+		final RESTObject<RESTChildObject<RESTGrandchildObject>> retValue = new RESTObject<RESTChildObject<RESTGrandchildObject>>();
+		retValue.setObjects(new ArrayList<RESTChildObject<RESTGrandchildObject>>());
 		
-		final RESTChildObject child = new RESTChildObject();
-		child.setId(1);
+		final RESTChildObject<RESTGrandchildObject> child = new RESTChildObject<RESTGrandchildObject>();
+		child.setSomeList(new ArrayList<RESTGrandchildObject>());
 		
 		retValue.getObjects().add(child);
 		
+		final RESTGrandchildObject grandchild = new RESTGrandchildObject();
+		grandchild.setName("Grandchild");
+		
+		child.getSomeList().add(grandchild);
+				
 		return retValue;
 
 	}
