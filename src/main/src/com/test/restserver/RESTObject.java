@@ -1,16 +1,16 @@
 package com.test.restserver;
 
-public class RESTObject<T>
+public class RESTObject
 {
-	private ListWrapper<T> objects;
+	private byte[] data;
 
-	public ListWrapper<T> getObjects()
+	public byte[] getData()
 	{
-		return objects;
+		return data;
 	}
 
-	public void setObjects(ListWrapper<T> objects)
+	public void setData(byte[] data)
 	{
-		this.objects = objects;
+		this.data = data;
 	}
 }
